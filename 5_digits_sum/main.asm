@@ -9,31 +9,31 @@ _start:	                ;tell linker entry point
   mov ecx, 5 ;num of digits
   clc ; clear CF flag
 add_loop:  
-  mov 	ax, [num1 + esi] ; set ax by num[esi] number
-  adc 	ax, [num2 + esi] ; Destination = Destination + Source + CF;
+  mov 	al, [num1 + esi] ; set ax by num[esi] number
+  adc 	al, [num2 + esi] ; Destination = Destination + Source + CF;
   aaa ; checking decimal overflow, add 1 to ah if overflow and set CF = 1 else CF = 0, doesn't work on x86
   pushf
-  or 	ax, 30h
+  or 	al, 30h
   popf
 
-  mov	[sum + esi], ax
+  mov	[sum + esi], al
   dec	esi
   loop	add_loop
 
-  mov	edx, len ;message length
-  mov	ecx, msg ;message to write
-  mov	ebx, 1 ;file descriptor (stdout)
-  mov	eax, 4 ;system caxl number (sys_write)
-  int	0x80 ;caxl kernel
+  mov	edx,len	        ;message length
+  mov	ecx,msg	        ;message to write
+  mov	ebx,1	        ;file descriptor (stdout)
+  mov	eax,4	        ;system call number (sys_write)
+  int	0x80	        ;call kernel
 
   mov	edx,5	        ;message length
   mov	ecx,sum	        ;message to write
   mov	ebx,1	        ;file descriptor (stdout)
-  mov	eax,4	        ;system caxl number (sys_write)
-  int	0x80	        ;caxl kernel
+  mov	eax,4	        ;system call number (sys_write)
+  int	0x80	        ;call kernel
 
-  mov	eax,1	        ;system caxl number (sys_exit)
-  int	0x80	        ;caxl kernel
+  mov	eax,1	        ;system call number (sys_exit)
+  int	0x80	        ;call kernel
 
 section	.data
   msg db 'The Sum is:',0xa	
