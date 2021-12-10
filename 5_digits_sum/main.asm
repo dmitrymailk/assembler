@@ -12,16 +12,16 @@ add_loop:
   mov 	al, [num1 + esi] ; set ax by num[esi] number
   adc 	al, [num2 + esi] ; Destination = Destination + Source + CF;
   aaa ; checking decimal overflow, add 1 to ah if overflow and set CF = 1 else CF = 0, doesn't work on x86
-  pushf
-  or 	al, 30h
-  popf
+  pushf ; add flags to stack
+  or 	al, 30h ; or operation with '0' and result
+  popf ; get flags from stack
 
   mov	[sum + esi], al
   dec	esi
   loop	add_loop
 
-  mov	edx,len	        ;message length
-  mov	ecx,msg	        ;message to write
+  mov	edx, len	        ;message length
+  mov	ecx, msg	        ;message to write
   mov	ebx,1	        ;file descriptor (stdout)
   mov	eax,4	        ;system call number (sys_write)
   int	0x80	        ;call kernel

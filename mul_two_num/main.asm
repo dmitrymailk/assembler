@@ -3,14 +3,16 @@ section	.text
 	
 _start:             ;tell linker entry point
 
-   mov	al, '5'
-   sub  al, '0'
+   mov  al, 5h
+   ; sub  al, '0'
+   ; add  al, '0'
 	
    mov 	bl, '2'
    sub  bl, '0'
 
-   mul 	bl ; multiply by al register target register and store result at al, mov bl => al = al * bl
-   add	al, '0'
+   ; mul 	bl ; multiply by al register target register and store result at al, mov bl => al = al * bl
+   add al, bl
+   add al, '0'
 	
    mov 	[res], al
    mov	ecx, msg	
