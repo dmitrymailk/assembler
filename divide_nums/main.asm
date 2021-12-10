@@ -4,7 +4,7 @@ section	.text
 _start:             ;tell linker entry point
   ;  mov	ax,'8'
   ;  sub  ax, '0'
-  mov ax, 456
+  mov ax, 100
 
 	
   ;  mov 	bl, '2'
@@ -16,7 +16,8 @@ _start:             ;tell linker entry point
   ; ah - reminder
   ; 65 is A
   ; 56 is 8
-  mov [res], ah
+  add ax, '0'
+  mov [res], ax
   mov	ecx, msg	
   mov	edx, len
   mov	ebx, 1	;file descriptor (stdout)
