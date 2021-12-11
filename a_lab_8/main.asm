@@ -9,15 +9,22 @@ _start:
   mov	ecx, msg ;message to write
   call print
 
+  ; mov bx, [number_len]
+  ; dec bx
+  ; mov [number_len], bx
   mov bx, [number]
-  push bx
+print_num:  
+  ; pop bx
   call power_10 
   mov bx, ax
-  pop ax
+  mov ax, [number]
   div bx
-
-
-  call print_num
+  mov [number], dx
+  ; mov ax, dx
+  call print_digit
+  mov dx, [number_len]
+  cmp dx, 0
+  jne print_num
 
 
 
@@ -25,18 +32,17 @@ _start:
   int	0x80
 
 power_10:
-  mov ecx, [number_len]
-  dec ecx
+  mov ecx, 1
   mov ax, 1
   mov bx, 10
-  cmp ecx, 0
-  jle zero_code
-  
   power_loop:
     mul bx
-  loop power_loop
-  
-  zero_code:
+    inc ecx
+    cmp ecx, [number_len]
+    jl power_loop
+  mov bx, [number_len]
+  dec bx
+  mov [number_len], bx
   ret
 
 print:
@@ -45,7 +51,7 @@ print:
   int	0x80 ;call kernel
   ret
 
-print_num:
+print_digit:
   ; mov eax, 6
   add ax, '0'
   mov [num], ax
@@ -62,8 +68,8 @@ section	.data
   msg db 'Start program', 0xa	
   len equ $ - msg		
 
-  number dw 401
-  number_len db 3
+  number dw 4523
+  number_len db 4
 
 segment .bss
   num resb 5

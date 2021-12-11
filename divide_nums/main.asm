@@ -4,12 +4,12 @@ section	.text
 _start:             ;tell linker entry point
   ;  mov	ax,'8'
   ;  sub  ax, '0'
-  mov ax, 100
+  mov ax, 1
 
 	
   ;  mov 	bl, '2'
   ;  sub  bl, '0'
-  mov bl, 100
+  mov bl, 1
   div bl
   ; add	ax, '0'
   ; ax - quotient
