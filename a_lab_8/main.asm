@@ -9,15 +9,16 @@ _start:
   mov	ecx, msg ;message to write
   call print
 
-  ; mov ecx, number_a_len
-  ; mov esi, 0
+  mov ecx, number_a_len
+  mov esi, 0
 
-  ; mov bx, 0
-  ; mov [decimal_num], bx
+  mov bx, 0
+  mov [decimal_num], bx
 
-  ; mov bx, 9
-  ; mov [digit], bx
-  ; call print_digit
+  mov bx, 9
+  mov [digit], bx
+  call print_digit
+  call print_newline
 
 ; char_to_decimal:
 ;   mov [i], ecx
@@ -32,7 +33,7 @@ _start:
 ;   mov ecx, [i]
 ;   loop char_to_decimal
 
-  call print_num
+;   call print_num
 
 
   call exit
@@ -81,11 +82,19 @@ print_digit:
   mov ecx, digit
   mov edx, 1
   call print
-  call print_newline
+  call print_delim
+  ret
+
+print_delim:
+  mov ax, 35
+  mov [digit], ax
+  mov ecx, digit
+  mov edx, 1
+  call print
   ret
 
 print_newline:
-  mov ax, 35
+  mov ax, 10
   mov [digit], ax
   mov ecx, digit
   mov edx, 1
@@ -132,8 +141,8 @@ section	.data
   number_a_len equ $ - number_a		
 
 
-  number dw 4
-  number_len db 1
+  number dw 443
+  number_len db 3
 
 segment .bss
   digit resb 5
