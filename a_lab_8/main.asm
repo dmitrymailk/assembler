@@ -9,22 +9,22 @@ _start:
   mov	ecx, msg ;message to write
   call print
 
-  ; mov bx, [number_len]
-  ; dec bx
-  ; mov [number_len], bx
-  mov bx, [number]
 print_num:  
-  ; pop bx
-  call power_10 
+
+  call power_10
+
+  ; push ax 
   mov bx, ax
   mov ax, [number]
   div bx
   mov [number], dx
-  ; mov ax, dx
   call print_digit
   mov dx, [number_len]
-  cmp dx, 0
+  cmp dx, 1
   jne print_num
+
+  mov ax, [number]
+  call print_digit
 
 
 
@@ -35,6 +35,8 @@ power_10:
   mov ecx, 1
   mov ax, 1
   mov bx, 10
+  cmp ecx, [number_len]
+  je power_end
   power_loop:
     mul bx
     inc ecx
@@ -43,7 +45,9 @@ power_10:
   mov bx, [number_len]
   dec bx
   mov [number_len], bx
+  power_end:
   ret
+
 
 print:
   mov	ebx, 1 ;file descriptor (stdout)
