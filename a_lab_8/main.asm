@@ -9,36 +9,84 @@ _start:
   mov	ecx, msg ;message to write
   call print
 
-  mov ecx, number_a_len
   mov esi, 0
 
   mov bx, 0
   mov [decimal_num], bx
 
-  mov bx, 9
-  mov [digit], bx
+  mov ecx, number_a_len
+  mov [digit], ecx
   call print_digit
   call print_newline
 
-; char_to_decimal:
-;   mov [i], ecx
-;   call power_10
+  mov bx, number_a_len
+  ; dec bx
+  mov [number_len], bx
+  mov esi, 0
+char_to_decimal:
+  mov [i], bx
+  call power_10
+  ;--- number to decimal convertion --- 
+  mov bx, [number_a + esi]
+  sub bx, '0'
+  mov cx, ax
+  mov ax, 0
+  
+  ; decimal_mul:
+  ;   add ax, cx
+  ;   dec bx
+  ;   cmp bx, 0
+  ;   jg decimal_mul
 
-;   ; mov ax, [number_a + esi]
-;   ; sub ax, '0'
-;   ; inc esi
-;   ; mov [num], ecx
-;   ; mov ax, [num]
-;   call print_digit
-;   mov ecx, [i]
-;   loop char_to_decimal
+  ; mov bx, [decimal_num]
+  ; add bx, ax
+  add [decimal_num], cx
+  ; mov [decimal_num], ax
+  ;---
+  ; mov bx, [i]
+  mov bx, [number_a + esi]
+  sub bx, '0'
+  mov [digit], bx
+  call print_digit
 
-;   call print_num
+  mov bx, [i]
+  dec bx
+  inc esi
+  mov [i], bx
+  cmp bx, 1
+  jge char_to_decimal
 
+  call print_newline
+
+  ; print decimal number
+  mov bx, number_a_len
+  ; inc bx
+  mov [number_len], bx
+
+  mov bx, [decimal_num]
+  mov [number], bx
+
+  mov ax, 100
+  mov bx, 2
+  mov dx, ax
+  decimal_mul:
+    add ax, dx
+    dec bx
+    cmp bx, 1
+    jg decimal_mul
+  
+  mov bx, 1000
+  add bx, ax
+  mov [number], bx
+
+
+
+  call print_num
 
   call exit
 
 exit:
+  call print_newline
   mov	eax, 1
   int	0x80
   ret
@@ -126,8 +174,7 @@ print_num:
   mov dx, [number_len]
   cmp dx, 1
   jg print_num
-  ; print last digit
-print_num_end:
+  print_num_end:
   mov ax, [number]
   mov [digit], ax
   call print_digit
@@ -141,7 +188,7 @@ section	.data
   number_a_len equ $ - number_a		
 
 
-  number dw 443
+  number dw 5678
   number_len db 3
 
 segment .bss
