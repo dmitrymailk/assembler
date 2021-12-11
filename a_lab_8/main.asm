@@ -31,8 +31,8 @@ power_10:
   mov ecx, 1
   mov ax, 1
   mov bx, 10
-  cmp ecx, [number_len]
-  je power_end
+  cmp ecx, [number_len] ; compare length with 1, because we can output one digit 
+  je power_end ; if we have only one number we'll skip
   power_loop:
     mul bx
     inc ecx
