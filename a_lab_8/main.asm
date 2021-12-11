@@ -9,11 +9,9 @@ _start:
   mov	ecx, msg ;message to write
   call print
 
+; program doesn't work for digits, it's only for numbers 
 print_num:  
-
   call power_10
-
-  ; push ax 
   mov bx, ax
   mov ax, [number]
   div bx
@@ -25,8 +23,6 @@ print_num:
 
   mov ax, [number]
   call print_digit
-
-
 
   mov	eax, 1
   int	0x80
@@ -72,8 +68,8 @@ section	.data
   msg db 'Start program', 0xa	
   len equ $ - msg		
 
-  number dw 4523
-  number_len db 4
+  number dw 21
+  number_len db 2
 
 segment .bss
   num resb 5
