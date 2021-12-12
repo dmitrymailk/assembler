@@ -25,10 +25,14 @@ _start:
   mov esi, 0
 char_to_decimal:
   mov [i], bx
-  call power_10
+  ; call power_10
   ;--- number to decimal convertion --- 
   mov bx, [number_a + esi]
   sub bx, '0'
+  mov ax, [decimal_num]
+  mov dx, 10
+  mul dx
+  add ax, bx
   ; mov [digit], bx
   ; call print_digit
   ; mov cx, ax
@@ -47,7 +51,7 @@ char_to_decimal:
 
   ; mov bx, [decimal_num]
   ; add bx, ax
-  add [decimal_num], ax
+  mov [decimal_num], ax
   ;---
   ; mov bx, [i]
   mov bx, [number_a + esi]
