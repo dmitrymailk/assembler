@@ -29,8 +29,15 @@ char_to_decimal:
   ;--- number to decimal convertion --- 
   mov bx, [number_a + esi]
   sub bx, '0'
-  mov cx, ax
-  mov ax, 0
+  ; mov [digit], bx
+  ; call print_digit
+  ; mov cx, ax
+  ; mov ax, 0
+  ; mov bl,
+  ; mov ax, 10
+  ; mov bx, 9
+  ; imul ax,
+  ; add ax, 1
   
   ; decimal_mul:
   ;   add ax, cx
@@ -40,8 +47,7 @@ char_to_decimal:
 
   ; mov bx, [decimal_num]
   ; add bx, ax
-  add [decimal_num], cx
-  ; mov [decimal_num], ax
+  add [decimal_num], ax
   ;---
   ; mov bx, [i]
   mov bx, [number_a + esi]
@@ -66,20 +72,18 @@ char_to_decimal:
   mov bx, [decimal_num]
   mov [number], bx
 
-  mov ax, 100
-  mov bx, 2
-  mov dx, ax
-  decimal_mul:
-    add ax, dx
-    dec bx
-    cmp bx, 1
-    jg decimal_mul
+  ; mov ax, 100
+  ; mov bx, 2
+  ; mov dx, ax
+  ; decimal_mul:
+  ;   add ax, dx
+  ;   dec bx
+  ;   cmp bx, 1
+  ;   jg decimal_mul
   
-  mov bx, 1000
-  add bx, ax
-  mov [number], bx
-
-
+  ; mov bx, 1000
+  ; add bx, ax
+  ; mov [number], bx
 
   call print_num
 
