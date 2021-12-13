@@ -20,40 +20,41 @@ _start:
   call print_newline
 
   mov bx, number_a_len
-  ; dec bx
   mov [number_len], bx
   mov esi, 0
 char_to_decimal:
   mov [i], bx
-  ; call power_10
+  ; ax = 10 ^ ([number_len] - [i])
+  call power_10
   ;--- number to decimal convertion --- 
   mov bx, [number_a + esi]
   sub bx, '0'
+  ;--- method one start
   mov ax, [decimal_num]
   mov dx, 10
   mul dx
   add ax, bx
-  ; mov [digit], bx
-  ; call print_digit
+  mov [decimal_num], ax
+  ;--- method one end
+  
+  ;--- method two start
   ; mov cx, ax
   ; mov ax, 0
-  ; mov bl,
-  ; mov ax, 10
-  ; mov bx, 9
-  ; imul ax,
-  ; add ax, 1
-  
   ; decimal_mul:
   ;   add ax, cx
   ;   dec bx
   ;   cmp bx, 0
   ;   jg decimal_mul
-
   ; mov bx, [decimal_num]
   ; add bx, ax
-  mov [decimal_num], ax
-  ;---
-  ; mov bx, [i]
+  ; mov [decimal_num], bx
+  ;--- method two end
+
+  ;--- method three start
+  ; mul bx
+  ; add [decimal_num], ax
+  ;--- method three end
+
   mov bx, [number_a + esi]
   sub bx, '0'
   mov [digit], bx
