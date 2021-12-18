@@ -54,35 +54,60 @@ _start:
   call print_num
 
   call print_newline
-  mov bx, 5
+  mov ebx, 5
   mov [number_len], bx
-  mov bx, 15
-  mov ax, [number_1]
-  mul bx
-  mov [number], ax
+  mov ebx, 15
+  mov eax, [number_1]
+  mul ebx
+  mov [number], eax
 
-  call print_num
+  ; call print_num
+  call print_num_v2
 
   call exit
 
 exit:
-  call print_newline
+  ; call print_newline
   mov	eax, 1
+  mov ebx, 0
   int	0x80
   ret
 
-; print_num_v2:
-;   mov eax, [number]
-;   divideLoop:
-;     inc ecx             
-;     mov edx, 0          
-;     mov esi, 10         
-;     idiv esi             
-;     add edx, '0'         
-;     push edx             
-;     cmp eax, 0          
-;     jg divideLoop      
-; ret
+print_num_v2:
+  ; mov eax, [number]
+  mov eax, [number]
+  mov ecx, 0
+  mov ebx, 10    
+  mov edi, number
+  .divideLoop:
+    mov edx, 0          
+    div ebx           
+    add edx, '0'         
+    push edx             
+    inc ecx             
+    cmp eax, 0        
+    jnz .divideLoop      
+  ; pop eax
+  ; pop eax
+  ; pop eax
+  mov [i], ecx
+  .reverse:
+    pop eax
+    mov [edi], eax
+    inc edi
+    dec ecx
+    cmp ecx, 0
+    jnz .reverse
+    mov byte [edi], 0
+    mov byte [edi+1], 0xa
+  
+  mov ecx, number
+  mov edx, [i]
+  mov eax, 4
+  mov ebx, 1
+  mov edx, 8
+  int 0x80
+  ret
 
 power_10:
   mov ecx, 1
@@ -176,10 +201,10 @@ section	.data
   number_a db '1234'
   number_a_len equ $ - number_a		
 
-  number_str dw '            '
-
   number dw 5678
   number_len db 3
+
+  buff db 0x00
 
 segment .bss
   digit resb 5
@@ -190,6 +215,8 @@ segment .bss
   
   number_1 resb 5
   number_2 resb 5
+
+
 
 
   
