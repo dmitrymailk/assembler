@@ -1,0 +1,840 @@
+NASM Output format debug dump
+input file  = main.asm
+output file = main.dbg
+*** pass reset: pass0 = 0, passn = 1
+section_name on init: returning 2
+section_names .text () pass 1: returning 4
+deflabel .text := 00000005:0000000000000000 local (0)(null)
+section_names .data () pass 1: returning 6
+deflabel print_num_end.data := 00000007:0000000000000000 local (0)(null)
+section_names .bss () pass 1: returning 8
+deflabel number_len.bss := 00000009:0000000000000000 local (0)(null)
+*** pass reset: pass0 = 0, passn = 2
+section_name on init: returning 2
+herelabel _start type 1 (seg 00000004) -> 00000004
+herelabel char_to_decimal type 0 (seg 00000004) -> 00000004
+herelabel exit type 0 (seg 00000004) -> 00000004
+herelabel power_10 type 0 (seg 00000004) -> 00000004
+herelabel power_loop type 0 (seg 00000004) -> 00000004
+herelabel power_end type 0 (seg 00000004) -> 00000004
+herelabel dec_number_len type 0 (seg 00000004) -> 00000004
+herelabel print type 0 (seg 00000004) -> 00000004
+herelabel print_digit type 0 (seg 00000004) -> 00000004
+herelabel print_delim type 0 (seg 00000004) -> 00000004
+herelabel print_newline type 0 (seg 00000004) -> 00000004
+herelabel print_debug type 0 (seg 00000004) -> 00000004
+herelabel print_num type 0 (seg 00000004) -> 00000004
+herelabel print_num_end type 0 (seg 00000004) -> 00000004
+herelabel msg type 0 (seg 00000006) -> 00000006
+herelabel number_a type 0 (seg 00000006) -> 00000006
+herelabel number type 0 (seg 00000006) -> 00000006
+herelabel number_len type 0 (seg 00000006) -> 00000006
+herelabel digit type 0 (seg 00000008) -> 00000008
+herelabel decimal_num type 0 (seg 00000008) -> 00000008
+herelabel i type 0 (seg 00000008) -> 00000008
+herelabel temp type 0 (seg 00000008) -> 00000008
+*** pass reset: pass0 = 1, passn = 3
+section_name on init: returning 2
+herelabel _start type 1 (seg 00000004) -> 00000004
+deflabel _start := 00000004:0000000000000000 global (1)(null)
+herelabel char_to_decimal type 0 (seg 00000004) -> 00000004
+deflabel char_to_decimal := 00000004:000000000000003a local (0)(null)
+herelabel exit type 0 (seg 00000004) -> 00000004
+deflabel exit := 00000004:0000000000000091 local (0)(null)
+herelabel power_10 type 0 (seg 00000004) -> 00000004
+deflabel power_10 := 00000004:000000000000009d local (0)(null)
+herelabel power_loop type 0 (seg 00000004) -> 00000004
+deflabel power_loop := 00000004:00000000000000b0 local (0)(null)
+herelabel power_end type 0 (seg 00000004) -> 00000004
+deflabel power_end := 00000004:00000000000000bb local (0)(null)
+herelabel dec_number_len type 0 (seg 00000004) -> 00000004
+deflabel dec_number_len := 00000004:00000000000000bf local (0)(null)
+herelabel print type 0 (seg 00000004) -> 00000004
+deflabel print := 00000004:00000000000000c9 local (0)(null)
+herelabel print_digit type 0 (seg 00000004) -> 00000004
+deflabel print_digit := 00000004:00000000000000d8 local (0)(null)
+herelabel print_delim type 0 (seg 00000004) -> 00000004
+deflabel print_delim := 00000004:00000000000000f4 local (0)(null)
+herelabel print_newline type 0 (seg 00000004) -> 00000004
+deflabel print_newline := 00000004:000000000000010a local (0)(null)
+herelabel print_debug type 0 (seg 00000004) -> 00000004
+deflabel print_debug := 00000004:0000000000000120 local (0)(null)
+herelabel print_num type 0 (seg 00000004) -> 00000004
+deflabel print_num := 00000004:0000000000000136 local (0)(null)
+herelabel print_num_end type 0 (seg 00000004) -> 00000004
+deflabel print_num_end := 00000004:0000000000000161 local (0)(null)
+herelabel msg type 0 (seg 00000006) -> 00000006
+deflabel msg := 00000006:0000000000000000 local (0)(null)
+deflabel len := ffffffff:000000000000000e local (0)(null)
+herelabel number_a type 0 (seg 00000006) -> 00000006
+deflabel number_a := 00000006:000000000000000e local (0)(null)
+deflabel number_a_len := ffffffff:0000000000000004 local (0)(null)
+herelabel number type 0 (seg 00000006) -> 00000006
+deflabel number := 00000006:0000000000000012 local (0)(null)
+herelabel number_len type 0 (seg 00000006) -> 00000006
+deflabel number_len := 00000006:0000000000000014 local (0)(null)
+herelabel digit type 0 (seg 00000008) -> 00000008
+deflabel digit := 00000008:0000000000000000 local (0)(null)
+herelabel decimal_num type 0 (seg 00000008) -> 00000008
+deflabel decimal_num := 00000008:0000000000000005 local (0)(null)
+herelabel i type 0 (seg 00000008) -> 00000008
+deflabel i := 00000008:000000000000000a local (0)(null)
+herelabel temp type 0 (seg 00000008) -> 00000008
+deflabel temp := 00000008:000000000000000b local (0)(null)
+*** pass reset: pass0 = 2, passn = 4
+section_name on init: returning 2
+herelabel _start type 1 (seg 00000004) -> 00000004
+out to 4:0 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:1 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: ba                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:2 rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 0e 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:6 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:7 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b9                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:8 address wrap bits 16 insoffs 2/6 size 4 ins mov(2) target 6:0
+  legacy: out to 4, len = 4: addr 00000000 (seg 00000006, wrt ffffffff)
+out to 4:c rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:d rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: ba 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:f rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:10 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: be                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:11 rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 00 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:15 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: bb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:16 rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 00 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:18 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:19 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:1a address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 8:5
+  legacy: out to 4, len = 2: addr 00000005 (seg 00000008, wrt ffffffff)
+out to 4:1c rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:1d rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b9                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:1e rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 04 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:22 rawdata wrap bits 16 insoffs 0/5 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:23 rawdata wrap bits 16 insoffs 1/5 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:24 rawdata wrap bits 16 insoffs 2/5 size 1 ins mov(2)
+  data: 0e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:25 address wrap bits 16 insoffs 3/5 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:27 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:28 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: ae 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:2a rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:2b rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: dd 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:2d rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: bb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:2e rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 04 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:30 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:31 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:32 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 6:14
+  legacy: out to 4, len = 2: addr 00000014 (seg 00000006, wrt ffffffff)
+out to 4:34 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:35 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: be                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:36 rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 00 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+herelabel char_to_decimal type 0 (seg 00000004) -> 00000004
+out to 4:3a rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:3b rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:3c address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 8:a
+  legacy: out to 4, len = 2: addr 0000000a (seg 00000008, wrt ffffffff)
+out to 4:3e rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:3f rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 5c 00                                              \.              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:41 rawdata wrap bits 16 insoffs 0/7 size 1 ins mov(2)
+  data: 67                                                 g               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:42 rawdata wrap bits 16 insoffs 1/7 size 1 ins mov(2)
+  data: 8b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:43 rawdata wrap bits 16 insoffs 2/7 size 1 ins mov(2)
+  data: 9e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:44 address wrap bits 16 insoffs 3/7 size 4 ins mov(2) target 6:e
+  legacy: out to 4, len = 4: addr 0000000e (seg 00000006, wrt ffffffff)
+out to 4:48 rawdata wrap bits 16 insoffs 0/3 size 1 ins sub(2)
+  data: 83                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:49 rawdata wrap bits 16 insoffs 1/3 size 1 ins sub(2)
+  data: eb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:4a rawdata wrap bits 16 insoffs 2/3 size 1 ins sub(2)
+  data: 30                                                 0               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:4b rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a1                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:4c address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:5
+  legacy: out to 4, len = 2: addr 00000005 (seg 00000008, wrt ffffffff)
+out to 4:4e rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: ba                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:4f rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 0a 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:51 rawdata wrap bits 16 insoffs 0/2 size 1 ins mul(1)
+  data: f7                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:52 rawdata wrap bits 16 insoffs 1/2 size 1 ins mul(1)
+  data: e2                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:53 rawdata wrap bits 16 insoffs 0/2 size 1 ins add(2)
+  data: 01                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:54 rawdata wrap bits 16 insoffs 1/2 size 1 ins add(2)
+  data: d8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:55 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:56 address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:5
+  legacy: out to 4, len = 2: addr 00000005 (seg 00000008, wrt ffffffff)
+out to 4:58 rawdata wrap bits 16 insoffs 0/7 size 1 ins mov(2)
+  data: 67                                                 g               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:59 rawdata wrap bits 16 insoffs 1/7 size 1 ins mov(2)
+  data: 8b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:5a rawdata wrap bits 16 insoffs 2/7 size 1 ins mov(2)
+  data: 9e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:5b address wrap bits 16 insoffs 3/7 size 4 ins mov(2) target 6:e
+  legacy: out to 4, len = 4: addr 0000000e (seg 00000006, wrt ffffffff)
+out to 4:5f rawdata wrap bits 16 insoffs 0/3 size 1 ins sub(2)
+  data: 83                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:60 rawdata wrap bits 16 insoffs 1/3 size 1 ins sub(2)
+  data: eb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:61 rawdata wrap bits 16 insoffs 2/3 size 1 ins sub(2)
+  data: 30                                                 0               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:62 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:63 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:64 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:66 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:67 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 6f 00                                              o.              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:69 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 8b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:6a rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:6b address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 8:a
+  legacy: out to 4, len = 2: addr 0000000a (seg 00000008, wrt ffffffff)
+out to 4:6d rawdata wrap bits 16 insoffs 0/1 size 1 ins dec(1)
+  data: 4b                                                 K               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:6e rawdata wrap bits 16 insoffs 0/2 size 1 ins inc(1)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:6f rawdata wrap bits 16 insoffs 1/2 size 1 ins inc(1)
+  data: 46                                                 F               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:70 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:71 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:72 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 8:a
+  legacy: out to 4, len = 2: addr 0000000a (seg 00000008, wrt ffffffff)
+out to 4:74 rawdata wrap bits 16 insoffs 0/3 size 1 ins cmp(2)
+  data: 83                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:75 rawdata wrap bits 16 insoffs 1/3 size 1 ins cmp(2)
+  data: fb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:76 rawdata wrap bits 16 insoffs 2/3 size 1 ins cmp(2)
+  data: 01                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:77 rawdata wrap bits 16 insoffs 0/2 size 1 ins j(1)
+  data: 7d                                                 }               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:78 rawdata signed bits 16 insoffs 1/2 size 1 ins j(1)
+  data: c1                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:79 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:7a rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 8e 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:7c rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: bb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:7d rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 04 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:7f rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:80 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:81 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 6:14
+  legacy: out to 4, len = 2: addr 00000014 (seg 00000006, wrt ffffffff)
+out to 4:83 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 8b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:84 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:85 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 8:5
+  legacy: out to 4, len = 2: addr 00000005 (seg 00000008, wrt ffffffff)
+out to 4:87 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:88 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:89 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 6:12
+  legacy: out to 4, len = 2: addr 00000012 (seg 00000006, wrt ffffffff)
+out to 4:8b rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:8c rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: a8 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:8e rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:8f rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 00 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+herelabel exit type 0 (seg 00000004) -> 00000004
+out to 4:91 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:92 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 76 00                                              v.              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:94 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:95 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:96 rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 01 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:9a rawdata wrap bits 16 insoffs 0/2 size 1 ins int(1)
+  data: cd                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:9b rawdata unsigned bits 16 insoffs 1/2 size 1 ins int(1)
+  data: 80                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:9c rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel power_10 type 0 (seg 00000004) -> 00000004
+out to 4:9d rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:9e rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b9                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:9f rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 01 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:a3 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: b8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:a4 rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 01 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:a6 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: bb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:a7 rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 0a 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:a9 rawdata wrap bits 16 insoffs 0/5 size 1 ins cmp(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:aa rawdata wrap bits 16 insoffs 1/5 size 1 ins cmp(2)
+  data: 3b                                                 ;               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:ab rawdata wrap bits 16 insoffs 2/5 size 1 ins cmp(2)
+  data: 0e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:ac address wrap bits 16 insoffs 3/5 size 2 ins cmp(2) target 6:14
+  legacy: out to 4, len = 2: addr 00000014 (seg 00000006, wrt ffffffff)
+out to 4:ae rawdata wrap bits 16 insoffs 0/2 size 1 ins j(1)
+  data: 74                                                 t               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:af rawdata signed bits 16 insoffs 1/2 size 1 ins j(1)
+  data: 0b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel power_loop type 0 (seg 00000004) -> 00000004
+out to 4:b0 rawdata wrap bits 16 insoffs 0/2 size 1 ins mul(1)
+  data: f7                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:b1 rawdata wrap bits 16 insoffs 1/2 size 1 ins mul(1)
+  data: e3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:b2 rawdata wrap bits 16 insoffs 0/2 size 1 ins inc(1)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:b3 rawdata wrap bits 16 insoffs 1/2 size 1 ins inc(1)
+  data: 41                                                 A               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:b4 rawdata wrap bits 16 insoffs 0/5 size 1 ins cmp(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:b5 rawdata wrap bits 16 insoffs 1/5 size 1 ins cmp(2)
+  data: 3b                                                 ;               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:b6 rawdata wrap bits 16 insoffs 2/5 size 1 ins cmp(2)
+  data: 0e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:b7 address wrap bits 16 insoffs 3/5 size 2 ins cmp(2) target 6:14
+  legacy: out to 4, len = 2: addr 00000014 (seg 00000006, wrt ffffffff)
+out to 4:b9 rawdata wrap bits 16 insoffs 0/2 size 1 ins j(1)
+  data: 7c                                                 |               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:ba rawdata signed bits 16 insoffs 1/2 size 1 ins j(1)
+  data: f5                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel power_end type 0 (seg 00000004) -> 00000004
+out to 4:bb rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:bc rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 01 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:be rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel dec_number_len type 0 (seg 00000004) -> 00000004
+out to 4:bf rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 8b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:c0 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:c1 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 6:14
+  legacy: out to 4, len = 2: addr 00000014 (seg 00000006, wrt ffffffff)
+out to 4:c3 rawdata wrap bits 16 insoffs 0/1 size 1 ins dec(1)
+  data: 4b                                                 K               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:c4 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:c5 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:c6 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 6:14
+  legacy: out to 4, len = 2: addr 00000014 (seg 00000006, wrt ffffffff)
+out to 4:c8 rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel print type 0 (seg 00000004) -> 00000004
+out to 4:c9 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:ca rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: bb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:cb rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 01 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:cf rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:d0 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:d1 rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 04 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:d5 rawdata wrap bits 16 insoffs 0/2 size 1 ins int(1)
+  data: cd                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:d6 rawdata unsigned bits 16 insoffs 1/2 size 1 ins int(1)
+  data: 80                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:d7 rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel print_digit type 0 (seg 00000004) -> 00000004
+out to 4:d8 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a1                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:d9 address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:db rawdata wrap bits 16 insoffs 0/3 size 1 ins add(2)
+  data: 83                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:dc rawdata wrap bits 16 insoffs 1/3 size 1 ins add(2)
+  data: c0                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:dd rawdata wrap bits 16 insoffs 2/3 size 1 ins add(2)
+  data: 30                                                 0               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:de rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:df address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:e1 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:e2 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b9                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:e3 address wrap bits 16 insoffs 2/6 size 4 ins mov(2) target 8:0
+  legacy: out to 4, len = 4: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:e7 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:e8 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: ba                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:e9 rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 01 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:ed rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:ee rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: d9 ff                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:f0 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:f1 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 01 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:f3 rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel print_delim type 0 (seg 00000004) -> 00000004
+out to 4:f4 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: b8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:f5 rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 23 00                                              #.              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:f7 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:f8 address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:fa rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:fb rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b9                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:fc address wrap bits 16 insoffs 2/6 size 4 ins mov(2) target 8:0
+  legacy: out to 4, len = 4: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:100 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:101 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: ba                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:102 rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 01 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:106 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:107 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: c0 ff                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:109 rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel print_newline type 0 (seg 00000004) -> 00000004
+out to 4:10a rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: b8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:10b rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 0a 00                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:10d rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:10e address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:110 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:111 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b9                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:112 address wrap bits 16 insoffs 2/6 size 4 ins mov(2) target 8:0
+  legacy: out to 4, len = 4: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:116 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:117 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: ba                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:118 rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 01 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:11c rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:11d rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: aa ff                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:11f rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel print_debug type 0 (seg 00000004) -> 00000004
+out to 4:120 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: b8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:121 rawdata wrap bits 16 insoffs 1/3 size 2 ins mov(2)
+  data: 40 00                                              @.              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:123 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:124 address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:126 rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:127 rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: b9                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:128 address wrap bits 16 insoffs 2/6 size 4 ins mov(2) target 8:0
+  legacy: out to 4, len = 4: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:12c rawdata wrap bits 16 insoffs 0/6 size 1 ins mov(2)
+  data: 66                                                 f               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:12d rawdata wrap bits 16 insoffs 1/6 size 1 ins mov(2)
+  data: ba                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:12e rawdata wrap bits 16 insoffs 2/6 size 4 ins mov(2)
+  data: 01 00 00 00                                        ....            
+  legacy: out to 4, len = 4 (0x4): rawdata
+out to 4:132 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:133 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 94 ff                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:135 rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel print_num type 0 (seg 00000004) -> 00000004
+out to 4:136 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 8b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:137 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:138 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 6:14
+  legacy: out to 4, len = 2: addr 00000014 (seg 00000006, wrt ffffffff)
+out to 4:13a rawdata wrap bits 16 insoffs 0/3 size 1 ins cmp(2)
+  data: 83                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:13b rawdata wrap bits 16 insoffs 1/3 size 1 ins cmp(2)
+  data: fb                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:13c rawdata wrap bits 16 insoffs 2/3 size 1 ins cmp(2)
+  data: 01                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:13d rawdata wrap bits 16 insoffs 0/2 size 1 ins j(1)
+  data: 74                                                 t               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:13e rawdata signed bits 16 insoffs 1/2 size 1 ins j(1)
+  data: 22                                                 "               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:13f rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:140 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 5b ff                                              [.              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:142 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:143 address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:b
+  legacy: out to 4, len = 2: addr 0000000b (seg 00000008, wrt ffffffff)
+out to 4:145 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 8b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:146 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 1e                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:147 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 8:b
+  legacy: out to 4, len = 2: addr 0000000b (seg 00000008, wrt ffffffff)
+out to 4:149 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a1                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:14a address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 6:12
+  legacy: out to 4, len = 2: addr 00000012 (seg 00000006, wrt ffffffff)
+out to 4:14c rawdata wrap bits 16 insoffs 0/2 size 1 ins div(1)
+  data: f7                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:14d rawdata wrap bits 16 insoffs 1/2 size 1 ins div(1)
+  data: f3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:14e rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 89                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:14f rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 16                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:150 address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 6:12
+  legacy: out to 4, len = 2: addr 00000012 (seg 00000006, wrt ffffffff)
+out to 4:152 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:153 address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:155 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:156 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 80 ff                                              ..              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:158 rawdata wrap bits 16 insoffs 0/4 size 1 ins mov(2)
+  data: 8b                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:159 rawdata wrap bits 16 insoffs 1/4 size 1 ins mov(2)
+  data: 16                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:15a address wrap bits 16 insoffs 2/4 size 2 ins mov(2) target 6:14
+  legacy: out to 4, len = 2: addr 00000014 (seg 00000006, wrt ffffffff)
+out to 4:15c rawdata wrap bits 16 insoffs 0/3 size 1 ins cmp(2)
+  data: 83                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:15d rawdata wrap bits 16 insoffs 1/3 size 1 ins cmp(2)
+  data: fa                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:15e rawdata wrap bits 16 insoffs 2/3 size 1 ins cmp(2)
+  data: 01                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:15f rawdata wrap bits 16 insoffs 0/2 size 1 ins j(1)
+  data: 7f                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:160 rawdata signed bits 16 insoffs 1/2 size 1 ins j(1)
+  data: d5                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel print_num_end type 0 (seg 00000004) -> 00000004
+out to 4:161 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a1                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:162 address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 6:12
+  legacy: out to 4, len = 2: addr 00000012 (seg 00000006, wrt ffffffff)
+out to 4:164 rawdata wrap bits 16 insoffs 0/3 size 1 ins mov(2)
+  data: a3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:165 address wrap bits 16 insoffs 1/3 size 2 ins mov(2) target 8:0
+  legacy: out to 4, len = 2: addr 00000000 (seg 00000008, wrt ffffffff)
+out to 4:167 rawdata wrap bits 16 insoffs 0/3 size 1 ins call(1)
+  data: e8                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+out to 4:168 rawdata signed bits 16 insoffs 1/3 size 2 ins call(1)
+  data: 6e ff                                              n.              
+  legacy: out to 4, len = 2 (0x2): rawdata
+out to 4:16a rawdata wrap bits 16 insoffs 0/1 size 1 ins ret(0)
+  data: c3                                                 .               
+  legacy: out to 4, len = 1 (0x1): rawdata
+herelabel msg type 0 (seg 00000006) -> 00000006
+out to 6:0 rawdata wrap bits 16 insoffs 0/13 size 13 no ins (plain data)
+  data: 53 74 61 72 74 20 70 72-6f 67 72 61 6d             Start program   
+  legacy: out to 6, len = 13 (0xd): rawdata
+out to 6:d rawdata wrap bits 16 insoffs 0/1 size 1 no ins (plain data)
+  data: 0a                                                 .               
+  legacy: out to 6, len = 1 (0x1): rawdata
+herelabel number_a type 0 (seg 00000006) -> 00000006
+out to 6:e rawdata wrap bits 16 insoffs 0/4 size 4 no ins (plain data)
+  data: 31 32 33 34                                        1234            
+  legacy: out to 6, len = 4 (0x4): rawdata
+herelabel number type 0 (seg 00000006) -> 00000006
+out to 6:12 rawdata wrap bits 16 insoffs 0/2 size 2 no ins (plain data)
+  data: 2e 16                                              ..              
+  legacy: out to 6, len = 2 (0x2): rawdata
+herelabel number_len type 0 (seg 00000006) -> 00000006
+out to 6:14 rawdata wrap bits 16 insoffs 0/1 size 1 no ins (plain data)
+  data: 03                                                 .               
+  legacy: out to 6, len = 1 (0x1): rawdata
+herelabel digit type 0 (seg 00000008) -> 00000008
+out to 8:0 reserve wrap bits 16 insoffs 0/5 size 5 ins resb(1)
+  legacy: out to 8, len = 5 (0x5): reserved.
+herelabel decimal_num type 0 (seg 00000008) -> 00000008
+out to 8:5 reserve wrap bits 16 insoffs 0/5 size 5 ins resb(1)
+  legacy: out to 8, len = 5 (0x5): reserved.
+herelabel i type 0 (seg 00000008) -> 00000008
+out to 8:a reserve wrap bits 16 insoffs 0/1 size 1 ins resb(1)
+  legacy: out to 8, len = 1 (0x1): reserved.
+herelabel temp type 0 (seg 00000008) -> 00000008
+out to 8:b reserve wrap bits 16 insoffs 0/5 size 5 ins resb(1)
+  legacy: out to 8, len = 5 (0x5): reserved.

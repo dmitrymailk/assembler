@@ -25,14 +25,14 @@ _start:
 char_to_decimal:
   mov [i], bx
   ; ax = 10 ^ ([number_len] - [i])
-  call power_10
+  ; call power_10
   ;--- number to decimal convertion --- 
-  mov bx, [number_a + esi]
-  sub bx, '0'
+  mov bl, [number_a + esi]
+  sub bl, '0'
   ;--- method one start
   mov ax, [decimal_num]
-  mov dx, 10
-  mul dx
+  mov cx, 10
+  mul cx
   add ax, bx
   mov [decimal_num], ax
   ;--- method one end
@@ -116,10 +116,6 @@ power_10:
   call dec_number_len
 ret
 
-; power_end:
-;   call print_debug
-; ret
-
 dec_number_len:
   mov bx, [number_len]
   dec bx
@@ -202,9 +198,10 @@ section	.data
 
 segment .bss
   digit resb 5
-  decimal_num resb 5
+  decimal_num resd 5
   i resb 1
   temp resb 5
+  num resb 1
 
 
   
