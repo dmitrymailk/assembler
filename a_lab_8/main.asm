@@ -1,6 +1,5 @@
 ; y = 3 * a + b ^ 2
 
-
 section	.text
   global _start        ;must be declared for using gcc
 
@@ -14,11 +13,6 @@ _start:
   mov bx, 0
   mov [decimal_num], bx
 
-  ; mov ecx, number_a_len
-  ; mov [digit], ecx
-  ; call print_digit
-  ; call print_newline
-
 ;--- convert first number start ---
   mov bx, number_a_len
   mov [number_len], bx
@@ -26,26 +20,26 @@ _start:
   char_to_decimal:
     mov [i], ebx
     ;--- number to decimal convertion 
-    mov bl, [number_a + esi]
-    sub bl, '0'
-    ;--- method one start
-    mov eax, [decimal_num]
-    mov ecx, 10
-    mul ecx
-    add eax, ebx
-    mov [decimal_num], eax
+      mov bl, [number_a + esi]
+      sub bl, '0'
+      ;--- method one starts
+      mov eax, [decimal_num]
+      mov ecx, 10
+      mul ecx
+      add eax, ebx
+      mov [decimal_num], eax
 
-    mov ebx, [i]
-    dec ebx
-    inc esi
-    mov [i], ebx
-    cmp ebx, 1
-    jge char_to_decimal
+      mov ebx, [i]
+      dec ebx
+      inc esi
+      mov [i], ebx
+      cmp ebx, 1
+      jge char_to_decimal
 
-  mov ebx, [decimal_num]
-  mov [number_1], ebx
-  mov ebx, 0
-  mov [decimal_num], ebx
+      mov ebx, [decimal_num]
+      mov [number_1], ebx
+      mov ebx, 0
+      mov [decimal_num], ebx
 ;--- convert first number end---
 
 ;--- print first num start---
@@ -121,6 +115,7 @@ print_num_v2:
   mov ecx, 0
   mov ebx, 10    
   mov edi, number
+  ; divide until we won't get zero
   .divideLoop:
     mov edx, 0          
     div ebx           
@@ -152,18 +147,7 @@ print_num_v2:
   mov [number], ebx
   ret
 
-clear:
-  mov ecx, [i]
-  mov edi, number
-  mov eax, 0
-  .clear_number:
-    mov [edi], eax
-    dec edi
-    dec ecx
-    cmp ecx, 0
-    jnz .clear_number
-ret
-
+; help function for old print_num
 power_10:
   mov ecx, 1
   mov ax, 1
@@ -177,14 +161,7 @@ power_10:
     cmp ecx, [number_len]
     jl power_loop
   power_end:
-  call dec_number_len
 ret
-
-dec_number_len:
-  mov bx, [number_len]
-  dec bx
-  mov [number_len], bx
-  ret
 
 print:
   mov	ebx, 1 ;file descriptor (stdout)
@@ -218,16 +195,9 @@ print_newline:
   call print
   ret
 
-print_debug:
-  mov ax, 64
-  mov [digit], ax
-  mov ecx, digit
-  mov edx, 1
-  call print
-  ret
-
 
 ; program doesn't work for digits, it's only for numbers 
+; old version, need number length
 print_num:  
   mov bx, [number_len]
   cmp bx, 1
