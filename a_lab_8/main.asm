@@ -14,18 +14,18 @@ _start:
   mov bx, 0
   mov [decimal_num], bx
 
-  mov ecx, number_a_len
-  mov [digit], ecx
-  call print_digit
-  call print_newline
+  ; mov ecx, number_a_len
+  ; mov [digit], ecx
+  ; call print_digit
+  ; call print_newline
 
+;--- convert first number start ---
   mov bx, number_a_len
   mov [number_len], bx
   mov esi, 0
-;--- convert first number ---
   char_to_decimal:
     mov [i], ebx
-    ;--- number to decimal convertion --- 
+    ;--- number to decimal convertion 
     mov bl, [number_a + esi]
     sub bl, '0'
     ;--- method one start
@@ -41,24 +41,64 @@ _start:
     mov [i], ebx
     cmp ebx, 1
     jge char_to_decimal
-;--- convert first number ---
+
   mov ebx, [decimal_num]
   mov [number_1], ebx
+  mov ebx, 0
+  mov [decimal_num], ebx
+;--- convert first number end---
 
+;--- print first num start---
   mov ebx, [number_1]
   mov [number], ebx
-
   call print_num_v2
+;--- print first num end---
 
-  call print_newline
-  mov ebx, 5
+;--- convert second number start ---
+  mov bx, number_b_len
   mov [number_len], bx
-  mov ebx, 15
-  mov eax, [number_1]
-  mul ebx
-  mov [number], eax
+  mov esi, 0
+  char_to_decimal_2:
+    mov [i], ebx
+    ;--- number to decimal convertion 
+    mov bl, [number_b + esi]
+    sub bl, '0'
+    ;--- method one start
+    mov eax, [decimal_num]
+    mov ecx, 10
+    mul ecx
+    add eax, ebx
+    mov [decimal_num], eax
 
+    mov ebx, [i]
+    dec ebx
+    inc esi
+    mov [i], ebx
+    cmp ebx, 1
+    jge char_to_decimal_2
+
+  mov ebx, [decimal_num]
+  mov [number_2], ebx
+;--- convert second number end---
+  
+;--- print first num start---
+  mov ebx, [number_2]
+  mov [number], ebx
   call print_num_v2
+;--- print first num end---
+
+;--- arithmetic operations start ---  
+  ; mov ebx, 5
+  ; mov [number_len], bx
+  ; mov ebx, 15
+  ; mov eax, [number_1]
+  ; mul ebx
+  ; mov [number], eax
+;--- arithmetic operations end ---  
+
+;--- print result start ---  
+  ; call print_num_v2
+;--- print result end ---  
 
   call exit
 
@@ -99,7 +139,23 @@ print_num_v2:
   call print
   ; we need to empty stack before returning
   ; amount of pushes must equals to pops
+  call print_newline
+  ; call clear
+  mov ebx, 0
+  mov [number], ebx
   ret
+
+clear:
+  mov ecx, [i]
+  mov edi, number
+  mov eax, 0
+  .clear_number:
+    mov [edi], eax
+    dec edi
+    dec ecx
+    cmp ecx, 0
+    jnz .clear_number
+ret
 
 power_10:
   mov ecx, 1
@@ -192,6 +248,9 @@ section	.data
 
   number_a db '1234'
   number_a_len equ $ - number_a		
+
+  number_b db '4321'
+  number_b_len equ $ - number_b		
 
   number dw 5678
   number_len db 3
