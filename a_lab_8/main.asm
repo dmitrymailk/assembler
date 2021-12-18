@@ -24,34 +24,31 @@ _start:
   mov esi, 0
 ;--- convert first number ---
   char_to_decimal:
-    mov [i], bx
+    mov [i], ebx
     ;--- number to decimal convertion --- 
     mov bl, [number_a + esi]
     sub bl, '0'
     ;--- method one start
-    mov ax, [decimal_num]
-    mov cx, 10
-    mul cx
-    add ax, bx
-    mov [decimal_num], ax
+    mov eax, [decimal_num]
+    mov ecx, 10
+    mul ecx
+    add eax, ebx
+    mov [decimal_num], eax
 
-    mov bx, [i]
-    dec bx
+    mov ebx, [i]
+    dec ebx
     inc esi
-    mov [i], bx
-    cmp bx, 1
+    mov [i], ebx
+    cmp ebx, 1
     jge char_to_decimal
 ;--- convert first number ---
-  mov bx, [decimal_num]
-  mov [number_1], bx
+  mov ebx, [decimal_num]
+  mov [number_1], ebx
 
-  mov bx, number_a_len
-  mov [number_len], bx
+  mov ebx, [number_1]
+  mov [number], ebx
 
-  mov bx, [number_1]
-  mov [number], bx
-
-  call print_num
+  call print_num_v2
 
   call print_newline
   mov ebx, 5
@@ -61,20 +58,18 @@ _start:
   mul ebx
   mov [number], eax
 
-  ; call print_num
   call print_num_v2
 
   call exit
 
 exit:
-  ; call print_newline
+  call print_newline
   mov	eax, 1
   mov ebx, 0
   int	0x80
   ret
 
 print_num_v2:
-  ; mov eax, [number]
   mov eax, [number]
   mov ecx, 0
   mov ebx, 10    
@@ -87,10 +82,8 @@ print_num_v2:
     inc ecx             
     cmp eax, 0        
     jnz .divideLoop      
-  ; pop eax
-  ; pop eax
-  ; pop eax
   mov [i], ecx
+
   .reverse:
     pop eax
     mov [edi], eax
@@ -103,10 +96,9 @@ print_num_v2:
   
   mov ecx, number
   mov edx, [i]
-  mov eax, 4
-  mov ebx, 1
-  mov edx, 8
-  int 0x80
+  call print
+  ; we need to empty stack before returning
+  ; amount of pushes must equals to pops
   ret
 
 power_10:
