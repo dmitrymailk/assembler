@@ -3,7 +3,7 @@
 
 // assembler functions and variables
 void calc_two_numbers_expression();
-extern int64_t number_1;
+extern int64_t number_1; // int64_t is alias for long
 extern int64_t number_2;
 extern int64_t result;
 int main()
