@@ -2,19 +2,34 @@
 
 global calc_two_numbers_expression
 global unit_test
+global number_1
+global number_2
 section	.text
-  ; global _start        ;must be declared for using gcc
-
-; _start:	                 
-;   mov	edx, len ;message length
-;   mov	ecx, msg ;message to write
-;   call print
-
-;   mov esi, 0
-
-;   call calc_two_numbers_expression
-;   call exit
 calc_two_numbers_expression:
+  ; call get_numbers_from_string
+;--- arithmetic operations start ---  
+;--- y = 3 * a + b ^ 2
+; a = number_1
+; b = number_2 
+  mov eax, [number_1]
+  mov ebx, 3
+  mul ebx
+  mov [result], eax
+
+  mov eax, [number_2]
+  mul eax
+  add [result], eax
+;--- arithmetic operations end ---  
+
+;--- print result start ---  
+  mov ebx, [result]
+  mov [number], ebx
+  call print_num_v2
+;--- print result end ---  
+; 1234 * 3 + 4321^2=18674743
+ret
+
+get_numbers_from_string:
   mov ebx, 0
   mov [decimal_num], ebx
 ;--- convert first number start ---
@@ -84,27 +99,6 @@ calc_two_numbers_expression:
   mov [number], ebx
   call print_num_v2
 ;--- print first num end---
-
-;--- arithmetic operations start ---  
-;--- y = 3 * a + b ^ 2
-; a = number_1
-; b = number_2 
-  mov eax, [number_1]
-  mov ebx, 3
-  mul ebx
-  mov [result], eax
-
-  mov eax, [number_2]
-  mul eax
-  add [result], eax
-;--- arithmetic operations end ---  
-
-;--- print result start ---  
-  mov ebx, [result]
-  mov [number], ebx
-  call print_num_v2
-;--- print result end ---  
-; 1234 * 3 + 4321^2=18674743
 ret
 
 exit:
