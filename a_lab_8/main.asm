@@ -88,18 +88,25 @@ _start:
 ;--- print first num end---
 
 ;--- arithmetic operations start ---  
-  ; mov ebx, 5
-  ; mov [number_len], bx
-  ; mov ebx, 15
-  ; mov eax, [number_1]
-  ; mul ebx
-  ; mov [number], eax
+;--- y = 3 * a + b ^ 2
+; a = number_1
+; b = number_2 
+  mov eax, [number_1]
+  mov ebx, 3
+  mul ebx
+  mov [result], eax
+
+  mov eax, [number_2]
+  mul eax
+  add [result], eax
 ;--- arithmetic operations end ---  
 
 ;--- print result start ---  
-  ; call print_num_v2
+  mov ebx, [result]
+  mov [number], ebx
+  call print_num_v2
 ;--- print result end ---  
-
+; 1234 * 3 + 4321^2=18674743
   call exit
 
 exit:
@@ -266,6 +273,7 @@ segment .bss
   
   number_1 resb 5
   number_2 resb 5
+  result resb 5
 
 
 
