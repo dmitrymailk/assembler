@@ -22,73 +22,44 @@ _start:
   mov bx, number_a_len
   mov [number_len], bx
   mov esi, 0
-char_to_decimal:
-  mov [i], bx
-  ; ax = 10 ^ ([number_len] - [i])
-  ; call power_10
-  ;--- number to decimal convertion --- 
-  mov bl, [number_a + esi]
-  sub bl, '0'
-  ;--- method one start
-  mov ax, [decimal_num]
-  mov cx, 10
-  mul cx
-  add ax, bx
-  mov [decimal_num], ax
-  ;--- method one end
-  
-  ;--- method two start
-  ; mov cx, ax
-  ; mov ax, 0
-  ; decimal_mul:
-  ;   add ax, cx
-  ;   dec bx
-  ;   cmp bx, 0
-  ;   jg decimal_mul
-  ; mov bx, [decimal_num]
-  ; add bx, ax
-  ; mov [decimal_num], bx
-  ;--- method two end
+;--- convert first number ---
+  char_to_decimal:
+    mov [i], bx
+    ;--- number to decimal convertion --- 
+    mov bl, [number_a + esi]
+    sub bl, '0'
+    ;--- method one start
+    mov ax, [decimal_num]
+    mov cx, 10
+    mul cx
+    add ax, bx
+    mov [decimal_num], ax
 
-  ;--- method three start
-  ; mul bx
-  ; add [decimal_num], ax
-  ;--- method three end
+    mov bx, [i]
+    dec bx
+    inc esi
+    mov [i], bx
+    cmp bx, 1
+    jge char_to_decimal
+;--- convert first number ---
+  mov bx, [decimal_num]
+  mov [number_1], bx
 
-  mov bx, [number_a + esi]
-  sub bx, '0'
-  mov [digit], bx
-  call print_digit
-
-  mov bx, [i]
-  dec bx
-  inc esi
-  mov [i], bx
-  cmp bx, 1
-  jge char_to_decimal
-
-  call print_newline
-
-  ; print decimal number
   mov bx, number_a_len
-  ; inc bx
   mov [number_len], bx
 
-  mov bx, [decimal_num]
+  mov bx, [number_1]
   mov [number], bx
 
-  ; mov ax, 100
-  ; mov bx, 2
-  ; mov dx, ax
-  ; decimal_mul:
-  ;   add ax, dx
-  ;   dec bx
-  ;   cmp bx, 1
-  ;   jg decimal_mul
-  
-  ; mov bx, 1000
-  ; add bx, ax
-  ; mov [number], bx
+  call print_num
+
+  call print_newline
+  mov bx, 5
+  mov [number_len], bx
+  mov bx, 15
+  mov ax, [number_1]
+  mul bx
+  mov [number], ax
 
   call print_num
 
@@ -99,6 +70,19 @@ exit:
   mov	eax, 1
   int	0x80
   ret
+
+; print_num_v2:
+;   mov eax, [number]
+;   divideLoop:
+;     inc ecx             
+;     mov edx, 0          
+;     mov esi, 10         
+;     idiv esi             
+;     add edx, '0'         
+;     push edx             
+;     cmp eax, 0          
+;     jg divideLoop      
+; ret
 
 power_10:
   mov ecx, 1
@@ -192,6 +176,7 @@ section	.data
   number_a db '1234'
   number_a_len equ $ - number_a		
 
+  number_str dw '            '
 
   number dw 5678
   number_len db 3
@@ -202,6 +187,9 @@ segment .bss
   i resb 1
   temp resb 5
   num resb 1
+  
+  number_1 resb 5
+  number_2 resb 5
 
 
   
