@@ -5,3 +5,4 @@
 - [riptutorial assembly x86](https://riptutorial.com/x86)
 - [asmtutor](https://asmtutor.com/#lesson1)
 - [годный туториал по основам](https://youtu.be/wMhLtZPptzY)
+- [connect c and nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/)

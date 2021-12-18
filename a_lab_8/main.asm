@@ -12,7 +12,9 @@ _start:
 
   mov bx, 0
   mov [decimal_num], bx
-
+  call calc_two_numbers_expression
+  call exit
+calc_two_numbers_expression:
 ;--- convert first number start ---
   mov bx, number_a_len
   mov [number_len], bx
@@ -101,7 +103,7 @@ _start:
   call print_num_v2
 ;--- print result end ---  
 ; 1234 * 3 + 4321^2=18674743
-  call exit
+ret
 
 exit:
   call print_newline
@@ -231,8 +233,6 @@ section	.data
 
   number dw 5678
   number_len db 3
-
-  buff db 0x00
 
 segment .bss
   digit resb 5
