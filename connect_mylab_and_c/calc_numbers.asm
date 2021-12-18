@@ -4,6 +4,7 @@ global calc_two_numbers_expression
 global unit_test
 global number_1
 global number_2
+global result
 section	.text
 calc_two_numbers_expression:
   ; call get_numbers_from_string
