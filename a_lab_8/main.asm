@@ -7,14 +7,13 @@ _start:
   mov	edx, len ;message length
   mov	ecx, msg ;message to write
   call print
-
-  mov esi, 0
-
-  mov bx, 0
-  mov [decimal_num], bx
   call calc_two_numbers_expression
   call exit
+  
 calc_two_numbers_expression:
+;--- clear decimal_num variable 
+  mov bx, 0
+  mov [decimal_num], bx
 ;--- convert first number start ---
   mov bx, number_a_len
   mov [number_len], bx
